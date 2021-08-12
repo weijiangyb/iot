@@ -4,7 +4,7 @@
 import datetime, json, os, random, time
 
 # Set the `project` variable to a Google Cloud project ID.
-project = 'GCP-PROJECT-ID'
+project = 'qwiklabs-gcp-03-70e9294b18f8'
 
 BRANCH = ['LIM', 'BOG', 'SFO', 'LAX', 'PEK', 'ATL', 'CDG', 'AMS',
     'HKG', 'ICN', 'FRA', 'MAD', 'SEA', 'LAS', 'SIN', 'BKK', 'DFW',
@@ -25,6 +25,6 @@ while True:
   #   https://cloud.google.com/pubsub/docs/publisher
   message = json.dumps(data)
   command = "gcloud --project={} pubsub topics publish sales --message='{}'".format(project, message)
-  print(command)
-  #os.system(command)
+  #print(command)
+  os.system(command)
   time.sleep(random.randrange(1, 5))
